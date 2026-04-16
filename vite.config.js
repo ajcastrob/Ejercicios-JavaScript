@@ -1,5 +1,13 @@
 import { defineConfig } from "vite";
+import { resolve } from "path";
 
 export default defineConfig({
-  base: "./", //Usa rutas relativas en los enlaces generados en html
+  build: {
+    rolldownOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        ejercicio1: resolve(__dirname, "pages/ejercicio1.html"),
+      },
+    },
+  },
 });
