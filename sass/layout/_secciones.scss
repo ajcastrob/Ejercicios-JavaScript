@@ -14,5 +14,63 @@
 
   p {
     color: ab.$text-secondary;
+    margin-bottom: 60px;
   }
+}
+
+.ejercicio__js {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  background-color: ab.$dark-soft;
+  width: 298px;
+  height: 344px;
+  padding: 24px;
+  border-radius: 25px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  h2 {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .etiqueta-1 {
+    color: ab.$blue-neon;
+    background-color: ab.$blue-po;
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  p {
+    margin-bottom: 24px;
+  }
+
+  .etiqueta-2,
+  .etiqueta-3 {
+    background-color: ab.$gray;
+    color: ab.$text-secondary;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 10px;
+  }
+
+  a {
+    display: inline-block;
+    padding: 12px 70px 12px 68px;
+    background-color: ab.$gray;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 14px;
+    color: ab.$text-primary;
+    transition: all 0.4s ease-in;
+    &:hover {
+      background-color: ab.$yellow;
+      color: ab.$dark-surface;
+    }
+  }
+}
+
+.etiqueta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
 }

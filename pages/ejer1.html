@@ -8,10 +8,47 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 1 - Javascript</title>
   </head>
   <body>
+    <header class="header-principal">
+      <nav class="nav-principal container">
+        <div class="nav__data">
+          <a href="#" class="nav__logo">
+            <img src="../assets/logo.svg" alt="logo" />
+          </a>
+
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line nav__burger"></i>
+            <i class="ri-close-line nav__close"></i>
+          </div>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li>
+              <a href="#" class="nav__link">JCA <i class="ri-user-line"></i></a>
+            </li>
+            <li>
+              <a href="#" class="nav__link"
+                >DISCORD <i class="ri-discord-line"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="nav__link"
+                >GITHUB <i class="ri-github-line"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
     <h1>Ejercicio 1</h1>
     <a href="/">Home</a>
     <script type="module" src="/pages/ejer1.js"></script>
