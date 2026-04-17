@@ -2,8 +2,9 @@
 
 .main-principal {
   .container {
-    max-width: 380px;
-    padding: 20px;
+    padding: 4rem 1.5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
     @include ab.breakpoint(ab.$tablet) {
       max-width: 760px;
     }
@@ -18,11 +19,33 @@
   }
 }
 
+.titles {
+  margin-bottom: 4rem;
+
+  .title__index {
+    font-family: ab.$font-display;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    color: ab.$text-primary;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .title__description {
+    font-family: ab.$font-body;
+    font-size: 1.125rem;
+    color: ab.$text-secondary;
+    font-weight: 400;
+    max-width: 480px;
+    line-height: 1.6;
+  }
+}
+
 .ejercicio__js {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  justify-self: center;
+  gap: 1rem;
   @include ab.breakpoint(ab.$tablet) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -32,63 +55,95 @@
   }
 
   &-item {
-    background-color: ab.$dark-soft;
-    width: 298px;
-    height: 344px;
-    padding: 24px;
-    border-radius: 25px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background: ab.$dark-surface;
+    border: 1px solid ab.$dark-border;
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background: ab.$dark-surface-elevated;
+      border-color: ab.$gray;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    }
   }
 
   h2 {
-    margin-top: 24px;
-    margin-bottom: 24px;
-  }
-  .etiqueta-1 {
-    color: ab.$blue-neon;
-    background-color: ab.$blue-po;
-    padding: 10px;
-    border-radius: 4px;
+    font-family: ab.$font-display;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: ab.$text-primary;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+    margin-top: 1.5rem;
   }
 
   p {
-    margin-bottom: 24px;
+    font-family: ab.$font-body;
+    font-size: 0.95rem;
+    color: ab.$text-secondary;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .etiqueta-1 {
+    font-family: ab.$font-body;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    background: rgba(ab.$accent, 0.15);
+    color: ab.$accent;
+    display: inline-block;
   }
 
   .etiqueta-2,
   .etiqueta-3 {
-    background-color: ab.$gray;
-    color: ab.$text-secondary;
-    padding: 5px;
-    border-radius: 10px;
-    font-size: 10px;
+    font-family: ab.$font-body;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    background: ab.$dark-soft;
+    color: ab.$text-tertiary;
+    border: 1px solid ab.$dark-border;
   }
 
   a {
     display: inline-block;
-    padding: 12px 70px 12px 68px;
-    background-color: ab.$gray;
-    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    background: ab.$dark-soft;
+    border-radius: 8px;
     text-align: center;
-    font-size: 14px;
+    font-size: 0.875rem;
+    font-family: ab.$font-body;
+    font-weight: 600;
     color: ab.$text-primary;
-    transition: all 0.4s ease-in;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
     &:hover {
-      background-color: ab.$yellow;
-      color: ab.$dark-surface;
+      color: ab.$text-primary;
     }
   }
 }
 
 .etiqueta {
   display: flex;
-  gap: 8px;
-  margin-bottom: 24px;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 .etiqueta-1.item2 {
-  background-color: ab.$yellow-op;
-  color: ab.$yellow;
+  background: rgba(ab.$accent-muted, 0.2);
+  color: #ff6b6b;
 }
 
 .etiqueta-1.item5,
@@ -96,6 +151,7 @@
 .etiqueta-1.item7,
 .etiqueta-1.item8,
 .etiqueta-1.item9 {
-  background-color: ab.$soft-pink;
-  color: ab.$pink;
+  background: rgba(100, 180, 255, 0.15);
+  color: #64b4ff;
 }
+

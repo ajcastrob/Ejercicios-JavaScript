@@ -3,27 +3,25 @@
 // -----------------------------------------------------------------------------
 
 /// Regular font family
-$font-display: "Zen Dots", sans-serif;
-$font-body: "Space Grotesk", sans-serif;
+$font-display: "Syne", sans-serif;
+$font-body: "Satoshi", sans-serif;
 
-// Colors Pallete
-$yellow: #f4df1e;
-$yellow-op: #312f1c;
-$blue-neon: #27dbe7;
-$blue-po: #1c2e30;
-$pink: #ffb4ab;
-$soft-pink: #322a2a;
+// Colors Pallete - Minimal refined
+$accent: #e63946;
+$accent-muted: #9d0208;
 
-// Background Colors
-$dark-bg: #0a0a0f;
-$dark-surface: #141419;
-$dark-border: #2a2a35;
-$dark-soft: #1b1b1c;
-$gray: #494946;
+// Background Colors - Warm dark minimal
+$dark-bg: #0d0d0d;
+$dark-surface: #161616;
+$dark-surface-elevated: #1e1e1e;
+$dark-border: #2a2a2a;
+$dark-soft: #222222;
+$gray: #3d3d3d;
 
 // Text Colors
-$text-primary: #ffffff;
-$text-secondary: #a0a0b0;
+$text-primary: #fafafa;
+$text-secondary: #888888;
+$text-tertiary: #555555;
 
 /// Breakpoints
 $bp-tablet: 768px;

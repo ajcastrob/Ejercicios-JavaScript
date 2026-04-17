@@ -12,7 +12,6 @@
 // 3. Layout-related sections
 @use "layout/footer";
 @use "layout/header";
-@use "layout/secciones";
 @use "layout/pages";
 
 // 4. Components
@@ -20,6 +19,7 @@
 
 // 5. Pages
 @use "pages/home";
+@use "layout/secciones";
 
 // 6. Themes
 @use "themes/default";

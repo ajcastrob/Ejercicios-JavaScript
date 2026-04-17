@@ -1,48 +1,78 @@
 @use "../abstracts" as ab;
 
-/* Ejercicio 1 - cambiar color página */
 div.ejer1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 60vh;
+  padding: 2rem;
+  
   p {
-    width: 320px;
+    max-width: 400px;
+    text-align: center;
+    font-family: ab.$font-body;
+    color: ab.$text-secondary;
+    margin-bottom: 2rem;
   }
 }
 
 div.btn-container {
-  width: 100%;
-  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+  
   button {
-    padding: 20px;
-    width: 120px;
-    height: 120px;
-    color: ab.$gray;
-    background-color: ab.$yellow;
+    padding: 1.5rem 2.5rem;
+    font-family: ab.$font-body;
+    font-size: 1rem;
+    font-weight: 600;
+    color: ab.$text-primary;
+    background: ab.$accent;
     border: none;
-    border-radius: 50%;
-    transition: all 0.2s ease-in;
-    box-shadow: 0 4px 2px ab.$yellow-op;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(ab.$accent, 0.3);
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(ab.$accent, 0.4);
+    }
+    
     &:active {
-      color: ab.$dark-surface;
-      background-color: ab.$blue-neon;
-      transform: scale(0.95);
+      transform: scale(0.98);
     }
   }
 }
 
 #color-actual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 2rem;
+  
   p.color {
-    background-color: ab.$dark-surface;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
+    font-family: ab.$font-body;
+    background: ab.$dark-surface;
+    color: ab.$text-primary;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    border: 1px solid ab.$dark-border;
+    text-align: center;
+  }
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: ab.$font-body;
+  font-size: 0.875rem;
+  color: ab.$text-secondary;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: ab.$accent;
   }
 }
