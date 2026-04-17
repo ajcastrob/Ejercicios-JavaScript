@@ -75,7 +75,7 @@
     left: 0;
     top: 2.5rem;
     width: 100%;
-    height: calc(100vh - 3.5rem);
+    height: 100vh;
     opacity: 0;
     overflow: auto;
     pointer-events: none;
@@ -173,4 +173,8 @@
   .nav__link:hover {
     background: transparent;
   }
+}
+
+.enlaces-secundarios {
+  color: ab.$text-secondary;
 }
