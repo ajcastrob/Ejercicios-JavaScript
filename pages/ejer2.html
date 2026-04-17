@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1 - Javascript</title>
+  </head>
+  <body>
+    <header class="header-principal">
+      <nav class="nav-principal container">
+        <div class="nav__data">
+          <a href="#" class="nav__logo">
+            <img src="../assets/logo.svg" alt="logo" />
+          </a>
+
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line nav__burger"></i>
+            <i class="ri-close-line nav__close"></i>
+          </div>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li>
+              <a href="#" class="nav__link">JCA <i class="ri-user-line"></i></a>
+            </li>
+            <li>
+              <a href="#" class="nav__link"
+                >DISCORD <i class="ri-discord-line"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="nav__link"
+                >GITHUB <i class="ri-github-line"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-principal">
+      <div class="container">
+        <div class="ejer1">
+          <h1>Ejercicio 2</h1>
+          <p>
+            Crea una página con un botón que diga "Contar clics" y un texto
+            inicial que muestre "Clics 0". Cada que que se haga clic en el
+            botón, se actualiza el texto con el total de clics
+          </p>
+          <a href="/" class="enlaces-secundarios"
+            ><i class="ri-arrow-left-line"></i> Regresar atrás</a
+          >
+        </div>
+        <div class="btn-container" id="btn-background">
+          <button id="btn-clics">Contar clics</button>
+        </div>
+
+        <div id="color-actual">
+          <p class="color">Clics: <span id="numero-clics">0</span></p>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/pages/ejer2.js"></script>
+  </body>
+</html>

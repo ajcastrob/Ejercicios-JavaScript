@@ -11,20 +11,25 @@ const createRandomColor = () => {
   return `rgb(${rojo},${verde},${azul})`;
 };
 
+//Actalizar etiqueta de color.
+function changeTagColor(color) {
+  let badge = document.querySelector(".color");
+
+  badge.textContent = color;
+}
+
 //Cambiar el color del body con un color random y actualizar la etiqueta que marca el color.
 const createTagColor = (btnId) => {
   //Seleccionar las etiquetas y el botón.
   const btn = document.getElementById(btnId);
   const body = document.querySelector("body");
-  let badge = document.querySelector(".color");
 
   btn.addEventListener("click", (e) => {
     //Evitar la propagación hacia el div padre.
     e.stopPropagation();
     let color = createRandomColor();
     body.style.backgroundColor = `${color}`;
-    badge.textContent = color;
-    return color;
+    changeTagColor(color);
   });
 };
 
