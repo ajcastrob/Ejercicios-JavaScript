@@ -3,20 +3,38 @@
 // -----------------------------------------------------------------------------
 
 /// Regular font family
-/// @type List
+$font-display: "Zen Dots", sans-serif;
+$font-body: "Space Grotesk", sans-serif;
 
-/// Copy text color
-/// @type Color
+// Colors Pallete
+$yellow: #f4df1e;
+$yellow-op: #312f1c;
+$blue-neon: #27dbe7;
+$blue-po: #1c2e30;
 
-/// Container's maximum width
-/// @type Length
+// Background Colors
+$dark-bg: #0a0a0f;
+$dark-surface: #141419;
+$dark-border: #2a2a35;
 
-/// Breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+// Text Colors
+$text-primary: #ffffff;
+$text-secondary: #a0a0b0;
 
-/// Relative or absolute URL where all assets are served from
-/// @type String
-/// @example scss - When using a CDN
-///   $base-url: 'https://cdn.example.com/assets/';
-$base-url: "/assets/" !default;
+/// Breakpoints
+$bp-tablet: 768px;
+$bp-tablet-horizontal: 1024px;
+$bp-desktop: 1200px;
+$bp-desktop-xl: 1440px;
+$bp-desktop-primary: 1900px;
+
+$tablet: $bp-tablet;
+$tablethorizontal: $bp-tablet-horizontal;
+$desktop: $bp-desktop;
+$desktop-xl: $bp-desktop-xl;
+$desktop-primary: $bp-desktop-primary;
+
+//Other variables
+$header-height: 3.5rem;
+$z-tootltip: 10;
+$z-fixed: 100;

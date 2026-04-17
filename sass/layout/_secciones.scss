@@ -1,0 +1,18 @@
+@use "../abstracts" as ab;
+
+.main-principal {
+  .container {
+    max-width: 380px;
+    padding: 20px;
+    @include ab.breakpoint(ab.$tablet) {
+      max-width: 760px;
+    }
+    @include ab.breakpoint(ab.$desktop) {
+      max-width: 1200px;
+    }
+  }
+
+  p {
+    color: ab.$text-secondary;
+  }
+}

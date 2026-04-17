@@ -1,3 +1,176 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+
+@use "../abstracts" as ab;
+
+.header-principal {
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  ul {
+    @include ab.reset-list();
+  }
+
+  a {
+    text-decoration: none;
+    color: ab.$text-primary;
+    i {
+      color: ab.$yellow;
+    }
+  }
+}
+
+.nav-principal {
+  height: ab.$header-height;
+  img {
+    width: 100%;
+  }
+}
+
+.nav__burger,
+.nav__close {
+  color: ab.$yellow;
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  inset: 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition:
+    opacity 0.1s,
+    transform 0.4s;
+}
+
+.nav__close {
+  opacity: 0;
+}
+
+.nav__data {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+
+.nav__toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+//* Navegación para dispositivos móviles *//
+@media screen and (max-width: ab.$desktop) {
+  .nav__menu {
+    position: absolute;
+    left: 0;
+    top: 2.5rem;
+    width: 100%;
+    height: calc(100vh - 3.5rem);
+    opacity: 0;
+    overflow: auto;
+    pointer-events: none;
+    transition:
+      top 0.4s,
+      opacity 0.3s;
+  }
+
+  .nav__link {
+    font-weight: 400;
+    background-color: ab.$dark-surface;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      color: yellow;
+      content: "";
+      height: 4px;
+      width: 10%;
+      background-color: yellow;
+      bottom: 0px;
+      transition: all 0.4s ease-in;
+    }
+
+    &:hover {
+      i {
+        color: ab.$text-primary;
+      }
+      &::before {
+        width: 0%;
+      }
+    }
+  }
+}
+
+.nav__link:hover {
+  color: ab.$text-secondary;
+}
+
+/* Show menu */
+.show-menu {
+  opacity: 1;
+  top: 3.5rem;
+  pointer-events: initial;
+}
+
+/*Show icon */
+.show-icon .nav__burger {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.show-icon .nav__close {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/* Breakpoints */
+@media screen and (min-width: 1200px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-principal {
+    height: calc(ab.$header-height + 2rem);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 3rem;
+  }
+
+  .nav__link {
+    height: 100%;
+    padding: 0;
+    justify-content: initial;
+    column-gap: 0.25rem;
+  }
+
+  .nav__link:hover {
+    background: transparent;
+  }
+}
