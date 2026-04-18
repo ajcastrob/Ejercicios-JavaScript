@@ -29,7 +29,7 @@
     />
     <meta name="apple-mobile-web-app-title" content="Proyectoconquerblocks" />
     <link rel="manifest" href="../site.webmanifest" />
-    <title>Ejercicio 2 - Javascript</title>
+    <title>Ejercicio 4</title>
   </head>
   <body>
     <header class="header-principal">
@@ -67,27 +67,35 @@
 
     <main class="main-principal">
       <div class="container">
-        <div class="ejer1">
-          <h1>Ejercicio 2</h1>
+        <div class="ejer1 page4">
+          <h1>Ejercicio 4</h1>
           <p>
-            Crea una página con un botón que diga "Contar clics" y un texto
-            inicial que muestre "Clics 0". Cada que que se haga clic en el
-            botón, se actualiza el texto con el total de clics
+            Crear una página con un campo de texto y una lista predefinida de
+            elementos. Mientras el usuario escribe en el campo, la lista debe
+            actualizarse y solo mostrar los elementos que tiene el texto
+            escrito.
           </p>
           <a href="/" class="enlaces-secundarios"
             ><i class="ri-arrow-left-line"></i> Regresar atrás</a
           >
         </div>
-        <div class="btn-container" id="btn-background">
-          <button id="btn-clics">Contar clics</button>
-        </div>
 
-        <div id="color-actual">
-          <p class="color">Clics: <span id="numero-clics">0</span></p>
+        <div class="search-elements">
+          <input type="text" class="text-user" id="input-user" />
+
+          <div class="list-items">
+            <ul class="elements-list" id="element-ul">
+              <li>Perro</li>
+              <li>Gato</li>
+              <li>Pez</li>
+              <li>Tigre</li>
+              <li>Zorro</li>
+            </ul>
+          </div>
         </div>
       </div>
     </main>
 
-    <script type="module" src="/pages/ejer2.js"></script>
+    <script type="module" src="/pages/ejer4.js"></script>
   </body>
 </html>
