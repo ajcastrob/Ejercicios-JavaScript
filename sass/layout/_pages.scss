@@ -182,3 +182,78 @@ div.btn-container {
     margin-bottom: 10px;
   }
 }
+
+//Página 5
+.calculadora {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.numbers {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  input {
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    border-bottom: 1px solid ab.$accent-muted;
+    color: ab.$text-primary;
+    padding-bottom: 5px;
+    width: 200px;
+    margin-bottom: 60px;
+
+    &::placeholder {
+      font-size: 0.9em;
+      text-align: center;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: 0 4px 4px rgba(ab.$accent, 0.3);
+    }
+    &:active {
+      border: 2px solid ab.$accent-muted;
+    }
+  }
+}
+
+.btns-cal {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 25px;
+  button {
+    padding: 1.5rem 2.5rem;
+    font-family: ab.$font-body;
+    font-size: 1rem;
+    font-weight: 600;
+    color: ab.$text-primary;
+    background: ab.$accent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(ab.$accent, 0.3);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(ab.$accent, 0.4);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+.resultado {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
