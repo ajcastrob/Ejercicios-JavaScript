@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 
-./pages/ejer6-explicacion.md 
+pages/ejer6-explicacion.md 
 
 # Editor directories and files
 .vscode/*
