@@ -1,69 +1,89 @@
 import "../sass/main.scss";
 import { showMenu } from "../src/utils/nav";
 
-const num1 = document.getElementById("number-1");
-const num2 = document.getElementById("number-2");
-const badgeResulado = document.getElementById("resul");
-const btns = document.querySelector("h2");
-const newP = document.createElement("p");
+class Calculadora {
+  constructor() {
+    //Elemenos del DOM.
+    this.num1 = document.getElementById("number-1");
+    this.num2 = document.getElementById("number-2");
+    this.badgeResulado = document.getElementById("resul");
+    this.titles = document.querySelector("h2");
+    this.buttons = document.querySelectorAll("button");
+    //Estado.
+    this.state = {};
 
-const buttons = document.querySelectorAll("button");
+    //Elementos reutilizables
+    this.message = document.createElement("p");
 
-let number1 = "";
-let number2 = "";
+    //eventos
+    this.initEvents();
+  }
 
-num1.addEventListener("input", (event) => {
-  number1 = event.target.value;
-});
+  //Evento de los botones.
+  initEvents() {
+    this.num1.addEventListener("input", this.handleInput);
+    this.num2.addEventListener("input", this.handleInput);
 
-num2.addEventListener("input", (event) => {
-  number2 = event.target.value;
-});
+    this.buttons.forEach((btn) => {
+      btn.addEventListener("click", this.handleOperation);
+    });
+  }
 
-buttons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    if (!number1 || !number2) {
-      newP.textContent = "Opción inválida";
-      btns.append(newP);
-    } else {
-      newP.textContent = "";
+  handleInput = (event) => {
+    this.state[event.target.id] = event.target.value;
+  };
 
-      if (btn.classList.contains("sumar")) {
-        const resultado = parseFloat(number1) + parseFloat(number2);
-        badgeResulado.textContent = resultado;
-      }
+  handleOperation = (event) => {
+    const btn = event.currentTarget;
 
-      if (btn.classList.contains("restar")) {
-        const resultado = parseFloat(number1) - parseFloat(number2);
-        badgeResulado.textContent = resultado;
-      }
+    const { "number-1": number1, "number-2": number2 } = this.state;
 
-      if (btn.classList.contains("multiplicar")) {
-        const resultado = parseFloat(number1) * parseFloat(number2);
-        badgeResulado.textContent = resultado;
-      }
+    if (!this.state["number-1"] || !this.state["number-2"]) {
+      this.showError("Opción inválida");
+      return;
+    }
 
-      if (btn.classList.contains("dividir")) {
-        if (number2 == 0) {
-          badgeResulado.textContent = "Error";
-        } else {
-          const resultado = parseFloat(number1) / parseFloat(number2);
-          badgeResulado.textContent = resultado.toFixed(2);
-        }
+    this.clearError();
+
+    const a = parseFloat(this.state["number-1"]);
+    const b = parseFloat(this.state["number-2"]);
+
+    if (btn.classList.contains("sumar")) {
+      this.updateResult(a + b);
+    }
+
+    if (btn.classList.contains("restar")) {
+      this.updateResult(a - b);
+    }
+
+    if (btn.classList.contains("multiplicar")) {
+      this.updateResult(a * b);
+    }
+
+    if (btn.classList.contains("dividir")) {
+      if (b === 0) {
+        this.updateResult("Error");
+      } else {
+        this.updateResult((a / b).toFixed(2));
       }
     }
-  });
-});
+  };
 
-showMenu("nav-toggle", "nav-menu");
-
-class Calculadora {
-  constructor(number1, number2) {
-    this.number1 = parseFloat(number1);
-    this.number2 = parseFloat(number2);
+  //Manejar UI.
+  updateResult(value) {
+    this.badgeResulado.textContent = value;
   }
 
-  sumar() {
-    console.log(this.number1 + this.number2);
+  showError(text) {
+    this.message.textContent = text;
+    this.titles.append(this.message);
+  }
+
+  clearError() {
+    this.message.textContent = "";
   }
 }
+
+let calculadora = new Calculadora();
+calculadora;
+showMenu("nav-toggle", "nav-menu");
