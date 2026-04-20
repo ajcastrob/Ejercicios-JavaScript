@@ -326,3 +326,55 @@ div.btn-container {
 #word {
   color: ab.$text-primary;
 }
+
+//Page 9
+.input-tarea {
+  margin-top: 40px;
+  input {
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    border-bottom: 1px solid ab.$accent-muted;
+    color: ab.$text-primary;
+    padding-bottom: 5px;
+    width: 250px;
+
+    &::placeholder {
+      font-size: 0.9em;
+      text-align: center;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: 0 4px 4px rgba(ab.$accent, 0.3);
+    }
+    &:active {
+      border: 2px solid ab.$accent-muted;
+    }
+  }
+  button {
+    padding: 0.5rem 1rem;
+    font-family: ab.$font-body;
+    font-size: 1rem;
+    font-weight: 600;
+    color: ab.$text-primary;
+    background: ab.$accent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(ab.$accent, 0.3);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(ab.$accent, 0.4);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+.div-tareas {
+}
