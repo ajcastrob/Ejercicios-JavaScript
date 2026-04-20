@@ -266,3 +266,37 @@ div.btn-container {
   margin-bottom: 3rem;
   font-size: 2rem;
 }
+
+//page 7
+.calculadora {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.password {
+  margin-bottom: 20px;
+  input {
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    border-bottom: 1px solid ab.$accent-muted;
+    color: ab.$text-primary;
+    padding-bottom: 5px;
+    width: 200px;
+    margin-bottom: 60px;
+
+    &::placeholder {
+      font-size: 0.9em;
+      text-align: center;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: 0 4px 4px rgba(ab.$accent, 0.3);
+    }
+    &:active {
+      border: 2px solid ab.$accent-muted;
+    }
+  }
+}
