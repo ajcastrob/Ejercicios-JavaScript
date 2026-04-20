@@ -300,3 +300,29 @@ div.btn-container {
     }
   }
 }
+
+//page 8
+#content {
+  width: 500px;
+  height: 300px;
+  background-color: ab.$dark-surface;
+  color: ab.$text-primary;
+  font-size: 16px;
+  padding: 1.5rem;
+  &:focus {
+    border: 1px solid ab.$accent;
+    outline: none;
+  }
+}
+
+.elements-word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+#char,
+#word {
+  color: ab.$text-primary;
+}
