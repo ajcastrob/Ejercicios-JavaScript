@@ -82,13 +82,20 @@
         <div class="calculadora">
           <h2>Lista de tareas</h2>
           <div class="input-tarea">
-            <input type="text" name="tarea" placeholder="Ingresa tu tarea" />
+            <input
+              id="user-input"
+              type="text"
+              name="tarea"
+              placeholder="Ingresa tu tarea"
+            />
             <button class="btn-tareas" id="agregar-tarea">Agregar</button>
           </div>
 
           <div class="div-tareas">
-            <ul class="list-tareas"></ul>
+            <ul class="list-tareas" id="tareas"></ul>
           </div>
+
+          <button id="btn-limpiar">Limpiar tareas</button>
         </div>
       </div>
     </main>

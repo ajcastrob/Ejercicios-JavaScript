@@ -364,6 +364,7 @@ div.btn-container {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 16px rgba(ab.$accent, 0.3);
+    margin-bottom: 20px;
 
     &:hover {
       transform: translateY(-2px);
@@ -377,4 +378,54 @@ div.btn-container {
 }
 
 .div-tareas {
+  width: 350px;
+  ul {
+    @include ab.reset-list();
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    color: ab.$text-primary;
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: solid 1px ab.$text-secondary;
+    border-radius: 50%;
+    background-color: ab.$dark-soft;
+    cursor: pointer;
+    &:checked {
+      background-color: ab.$accent;
+    }
+  }
+}
+
+#btn-limpiar {
+  padding: 1rem 1.5rem;
+  margin-top: 2.5rem;
+  font-family: ab.$font-body;
+  font-size: 1rem;
+  font-weight: 600;
+  color: ab.$text-primary;
+  background: ab.$accent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(ab.$accent, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(ab.$accent, 0.4);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
