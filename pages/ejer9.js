@@ -78,7 +78,7 @@ class TODO {
 
   getData() {
     const tareas = localStorage.getItem("data");
-    return tareas ? JSON.parse(tareas) : []; //Devolver la lista de tareas o una lista vacía si no hay tareas.
+    return tareas ? JSON.parse(tareas) : []; //Devolver la lista de tareas o un array vacío si no hay tareas.
   }
 
   restoreData() {
