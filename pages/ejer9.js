@@ -1,91 +1,117 @@
 import "../sass/main.scss";
 import { showMenu } from "../src/utils/nav";
 
-let btn = document.getElementById("agregar-tarea");
-let ulList = document.getElementById("tareas");
-let limpiarList = document.getElementById("btn-limpiar");
+class TODO {
+  constructor() {
+    this.btn = document.getElementById("agregar-tarea");
+    this.ulList = document.getElementById("tareas");
+    this.limpiarList = document.getElementById("btn-limpiar");
 
-//Crear un array vacío para almacenar las tareas.
-let allTasks = [];
+    //Definir el array para almacenar las tareas. Restaurar datos si hay.
+    this.allTasks = this.getData();
 
-function createElementsDom() {
-  let newLi = document.createElement("li");
-  let checkboxTask = document.createElement("input");
-  checkboxTask.type = "checkbox";
+    //eventos.
+    this.initEvents();
 
-  return [newLi, checkboxTask];
-}
+    //Restaurar sessión si hay datos.
+    this.restoreData();
+  }
 
-function checkTask(checkboxTask, tarea) {
-  checkboxTask.addEventListener("change", () => {
-    tarea.state = checkboxTask.checked;
-    saveData(allTasks);
-  });
-}
+  initEvents() {
+    this.btn.addEventListener("click", this.addTask.bind(this));
+    this.limpiarList.addEventListener("click", this.cleanList.bind(this));
+  }
 
-function addTask() {
-  let inputUser = document.getElementById("user-input");
+  addTask() {
+    let inputUser = document.getElementById("user-input");
+    let valueUser = inputUser.value.trim();
 
-  //Si el input está vacío regresar.
-  if (!inputUser.value) return;
+    //SI NO HAY NADA EN EL INPUT REGRESAR.
+    if (!valueUser) return;
 
-  let task = inputUser.value;
-  inputUser.value = "";
+    let task = valueUser;
+    inputUser.value = "";
 
-  let [newLi, checkboxTask] = createElementsDom();
+    //Crear la tarea y agregarla al array.
+    let tarea = {
+      id: Date.now(),
+      description: task,
+      state: false,
+    };
 
-  let tarea = {
-    id: Date.now(),
-    description: task,
-    state: false,
-  };
+    //Llamar a la función que comprueba el botón
+    this.allTasks.push(tarea);
+    //Mostar las tareas en el DOM
+    this.renderTask();
+    this.saveData();
+  }
 
-  newLi.textContent = task;
-  newLi.append(checkboxTask);
-  ulList.append(newLi);
+  renderTask() {
+    let newLi = document.createElement("li");
+    let checkboxTask = document.createElement("input");
 
-  //Llamar a la fucnión que chekea el botón y cambia el estado de marcado.
-  checkTask(checkboxTask, tarea);
+    checkboxTask.type = "checkbox";
+    //Guardar el id del checkboxTask
+    checkboxTask.dataset.id = this.allTasks[this.allTasks.length - 1].id;
 
-  allTasks.push(tarea);
-  saveData(allTasks);
-}
+    checkboxTask.addEventListener("change", this.checkedState.bind(this));
 
-function saveData(tarea) {
-  localStorage.setItem("data", JSON.stringify(tarea));
-}
-
-function getData() {
-  const tareas = localStorage.getItem("data");
-  return tareas ? JSON.parse(tareas) : []; //Devolver la lista de tareas o null si no hay tareas.
-}
-
-function restoreData(listTareas) {
-  listTareas.forEach((tarea) => {
-    let [newLi, checkboxTask] = createElementsDom();
-    newLi.textContent = tarea.description;
-    checkboxTask.checked = tarea.state;
+    newLi.textContent = this.allTasks[this.allTasks.length - 1].description;
+    checkboxTask.checked = this.allTasks[this.allTasks.length - 1].state;
     newLi.append(checkboxTask);
 
-    ulList.append(newLi);
+    //Agregar al ul
+    this.ulList.append(newLi);
+  }
 
-    //Llamar a la fucnión que chekea el botón y mara el estado de chekeo.
-    checkTask(checkboxTask, tarea);
-  });
+  cleanList() {
+    this.allTasks = [];
+
+    this.saveData();
+    //Limipiar el DOM.
+    this.ulList.replaceChildren();
+  }
+
+  saveData() {
+    localStorage.setItem("data", JSON.stringify(this.allTasks));
+  }
+
+  getData() {
+    const tareas = localStorage.getItem("data");
+    return tareas ? JSON.parse(tareas) : []; //Devolver la lista de tareas o una lista vacía si no hay tareas.
+  }
+
+  restoreData() {
+    this.allTasks.forEach((tarea) => {
+      const newLi = document.createElement("li");
+      const checkboxTask = document.createElement("input");
+      checkboxTask.type = "checkbox";
+
+      checkboxTask.dataset.id = tarea.id;
+      checkboxTask.addEventListener("change", this.checkedState.bind(this));
+
+      newLi.textContent = tarea.description;
+      checkboxTask.checked = tarea.state;
+      newLi.append(checkboxTask);
+
+      this.ulList.append(newLi);
+    });
+  }
+
+  checkedState(e) {
+    const id = Number(e.target.dataset.id);
+    const checked = e.target.checked;
+
+    const tarea = this.allTasks.find((tarea) => tarea.id === id);
+
+    if (tarea) {
+      tarea.state = checked;
+    }
+
+    this.saveData();
+  }
 }
 
-function cleanList() {
-  allTasks = [];
-
-  saveData(allTasks);
-  //Limipiar el DOM.
-  ulList.replaceChildren();
-}
-
-btn.addEventListener("click", addTask);
-limpiarList.addEventListener("click", cleanList);
-
-allTasks = getData();
-restoreData(allTasks);
+new TODO();
 
 showMenu("nav-toggle", "nav-menu");
