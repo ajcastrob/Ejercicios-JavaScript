@@ -39,8 +39,9 @@ class TODO {
       state: false,
     };
 
-    //Llamar a la función que comprueba el botón
+    //Agregar la tarea al array.
     this.allTasks.push(tarea);
+
     //Mostar las tareas en el DOM
     this.renderTask();
     this.saveData();
