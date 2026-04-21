@@ -1,0 +1,1 @@
+import{t as e}from"./nav-CR1fLaFX.js";function t(){let e=document.querySelectorAll(`#element-ul li`);document.getElementById(`input-user`).addEventListener(`input`,t=>{let n=t.target.value.toLowerCase();e.forEach(e=>{let t=e.textContent.toLowerCase().includes(n);e.style.display=t?``:`none`})})}t(),e(`nav-toggle`,`nav-menu`);

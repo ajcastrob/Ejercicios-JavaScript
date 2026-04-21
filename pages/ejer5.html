@@ -14,14 +14,23 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#F7DF1E" />
-    <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <link rel="shortcut icon" href="../favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../apple-touch-icon.png"
+    />
     <meta name="apple-mobile-web-app-title" content="Proyectoconquerblocks" />
     <link rel="manifest" href="../site.webmanifest" />
-    <title>Ejercicio 1 - Javascript</title>
-    <script type="module" crossorigin src="/assets/ejer1-Ca-0j95-.js"></script>
+    <title>Ejercicio 5</title>
+    <script type="module" crossorigin src="/assets/ejer5-DQbpZKcO.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/nav-CR1fLaFX.js">
     <link rel="stylesheet" crossorigin href="/assets/nav-BffX9hgv.css">
   </head>
@@ -61,23 +70,44 @@
 
     <main class="main-principal">
       <div class="container">
-        <div class="ejer1">
-          <h1>Ejercicio 1</h1>
+        <div class="ejer1 page4">
+          <h1>Ejercicio 5</h1>
           <p>
-            Crea una página web con un botón que diga "Cambiar color". Cada vez
-            que el usuario haga clic en el botón, el color del fondo de la
-            página de debe cambiar a un color aleatorio
+            Crear una página con dos campos de entrada de números y cuatro
+            botones: "Sumar", "Restar", "Multiplicar", "Dividir". Debe mostrarse
+            el resultado de la operación en un área de texto o debajo de los
+            botones.
           </p>
           <a href="/" class="enlaces-secundarios"
             ><i class="ri-arrow-left-line"></i> Regresar atrás</a
           >
         </div>
-        <div class="btn-container" id="btn-background">
-          <button id="btn-color">Cambiar Color</button>
+
+        <div class="calculadora">
+          <div class="numbers">
+            <input
+              placeholder="Ingrese un número"
+              type="number"
+              id="number-1"
+              name="number2"
+            />
+            <input
+              type="number"
+              name="number1"
+              placeholder="Ingrese un número"
+              id="number-2"
+            />
+          </div>
+          <div class="btns-cal">
+            <button class="sumar">Sumar</button>
+            <button class="restar">Restar</button>
+            <button class="dividir">Dividir</button>
+            <button class="multiplicar">Multiplicar</button>
+          </div>
         </div>
 
-        <div id="color-actual">
-          <p class="color">rgb(0 0 0)</p>
+        <div class="resultado">
+          <h2 class="title-resultado">Resultado = <span id="resul">0</span></h2>
         </div>
       </div>
     </main>

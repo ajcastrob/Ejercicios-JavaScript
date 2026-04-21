@@ -14,14 +14,23 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#F7DF1E" />
-    <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <link rel="shortcut icon" href="../favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../apple-touch-icon.png"
+    />
     <meta name="apple-mobile-web-app-title" content="Proyectoconquerblocks" />
     <link rel="manifest" href="../site.webmanifest" />
-    <title>Ejercicio 1 - Javascript</title>
-    <script type="module" crossorigin src="/assets/ejer1-Ca-0j95-.js"></script>
+    <title>Ejercicio 8</title>
+    <script type="module" crossorigin src="/assets/ejer8-CiEXfnhB.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/nav-CR1fLaFX.js">
     <link rel="stylesheet" crossorigin href="/assets/nav-BffX9hgv.css">
   </head>
@@ -61,23 +70,33 @@
 
     <main class="main-principal">
       <div class="container">
-        <div class="ejer1">
-          <h1>Ejercicio 1</h1>
+        <div class="ejer1 page4">
+          <h1>Ejercicio 8</h1>
           <p>
-            Crea una página web con un botón que diga "Cambiar color". Cada vez
-            que el usuario haga clic en el botón, el color del fondo de la
-            página de debe cambiar a un color aleatorio
+            Crea una página con un campo de texto donde el usuario pueda
+            escribir un párrafo. Muestra en tiempo real el número de caracteres
+            y palabras ingresadas.
           </p>
           <a href="/" class="enlaces-secundarios"
             ><i class="ri-arrow-left-line"></i> Regresar atrás</a
           >
         </div>
-        <div class="btn-container" id="btn-background">
-          <button id="btn-color">Cambiar Color</button>
-        </div>
 
-        <div id="color-actual">
-          <p class="color">rgb(0 0 0)</p>
+        <div class="calculadora">
+          <div class="password">
+            <textarea rows="4" cols="5" id="content"></textarea>
+          </div>
+
+          <div class="elements-word">
+            <p>
+              Caracteres:
+              <span id="char">0</span>
+            </p>
+            <p>
+              Palabras:
+              <span id="word">0</span>
+            </p>
+          </div>
         </div>
       </div>
     </main>

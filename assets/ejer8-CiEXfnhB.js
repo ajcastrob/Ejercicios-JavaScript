@@ -1,0 +1,1 @@
+import{t as e}from"./nav-CR1fLaFX.js";var t=document.getElementById(`content`),n=document.getElementById(`char`),r=document.getElementById(`word`);t.addEventListener(`input`,e=>{let t=e.target.value;n.textContent=t.length,t.trim(),r.textContent=t.split(/\s+/).filter(e=>e!==``).length}),e(`nav-toggle`,`nav-menu`);

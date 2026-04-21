@@ -1,1 +1,0 @@
-import{t as e}from"./nav-yb_WBx2R.js";function t(){let e=document.getElementById(`btn-clics`),t=document.getElementById(`numero-clics`),n=0;e.addEventListener(`click`,e=>{e.stopPropagation(),t.textContent=n++})}e(`nav-toggle`,`nav-menu`),t();
