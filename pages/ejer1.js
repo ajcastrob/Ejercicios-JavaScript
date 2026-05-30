@@ -1,14 +1,34 @@
 import "../sass/main.scss";
 import { showMenu } from "../src/utils/nav";
 
+class EventControl {
+  constructor(btnId) {
+    this.btn = document.getElementById(btnId);
+    this.body = document.querySelector("body");
+
+    this.btn.addEventListener("click", this);
+  }
+
+  handleEvent(event) {
+    if (event.type === "click") {
+      //Evitar la propagación hacia el div padre.
+      event.stopPropagation();
+      let color = createRandomColor();
+      this.body.setAttribute("style", `background-color: ${color}`);
+      changeTagColor(color);
+    }
+  }
+}
+
 //Generar un color random.
 const createRandomColor = () => {
   //Escoger el color aleatorio.
   let rojo = Math.floor(Math.random() * 255);
   let verde = Math.floor(Math.random() * 255);
   let azul = Math.floor(Math.random() * 255);
+  let alphaChannel = Math.random();
 
-  return `rgb(${rojo},${verde},${azul})`;
+  return `rgb(${rojo} ${verde} ${azul} / ${alphaChannel.toFixed(1)})`;
 };
 
 //Actalizar etiqueta de color.
@@ -18,20 +38,5 @@ function changeTagColor(color) {
   badge.textContent = color;
 }
 
-//Cambiar el color del body con un color random y actualizar la etiqueta que marca el color.
-const createTagColor = (btnId) => {
-  //Seleccionar las etiquetas y el botón.
-  const btn = document.getElementById(btnId);
-  const body = document.querySelector("body");
-
-  btn.addEventListener("click", (e) => {
-    //Evitar la propagación hacia el div padre.
-    e.stopPropagation();
-    let color = createRandomColor();
-    body.style.backgroundColor = `${color}`;
-    changeTagColor(color);
-  });
-};
-
 showMenu("nav-toggle", "nav-menu");
-createTagColor("btn-color");
+const changeColorBackground = new EventControl("btn-color");
